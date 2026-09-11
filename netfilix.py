@@ -157,22 +157,33 @@ class MovieManager:
 
 def main():
 
-      manager=MovieManager()
-      manager.read_to_csv()
+        manager=MovieManager()
+        manager.read_to_csv()
 
-    #   movie1 = Movie(title="Inception", genre="Sci-Fi", year=2010, rating=9, watched=True)
-    #   movie2 = Movie(title="Interstellar", genre="Sci-Fi", year=2014, rating=8.5, watched=False)
-    #   movie3 = Movie(title="The Godfather", genre="Crime", year=1972, rating=9.5, watched=True)
+      try:
+      movie1 = Movie(title="Inception", genre="Sci-Fi", year=2010, rating=9, watched=True)
+      movie2 = Movie(title="Interstellar", genre="Sci-Fi", year=2014, rating=8.5, watched=False)
+      movie3 = Movie(title="The Godfather", genre="Crime", year=1972, rating=9.5, watched=True)
  
-    #   print(manager.add_movie(movie1))
-    #   print(manager.add_movie(movie2))
-    #   print(manager.add_movie(movie3))
+      print(manager.add_movie(movie1))
+      print(manager.add_movie(movie2))
+      print(manager.add_movie(movie3))
  
-    #   manager.list_movies()
+      manager.list_movies()
  
-    #   manager.save_to_csv()
-
-
+      manager.save_to_csv()
+    except InvalidRatingNumber as e:
+       print(f"InvalidRatingNumber {e}") 
+    except InvalidWatched as e:
+               print(f"InvalidWatched {e}") 
+    except InvalidMovieObject as e:
+               print(f"InvalidMovieObject {e}")     
+    except MovieNotFound as e:
+               print(f"MovieNotFound {e}") 
+    except DuplicateMovieError as e:
+               print(f"InvalidRatingNumber {e}") 
+ 
+    
 
 if __name__=="__main__":
     main()
