@@ -66,7 +66,7 @@ class Library:
 
 def main():
 
-          library=Library("Kocaeli Kütüphane")
+          library=Library("Kütüphane")
           book1=Book("Suç ve Ceza","Fyodor Dostoyevski","9789750719387")
           book2=Book("1984","George Orwell","9789750718533")
           book3=Book("Simyaci","Paulo Coelho","9789750726434")
